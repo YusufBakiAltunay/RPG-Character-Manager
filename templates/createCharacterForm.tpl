@@ -1,0 +1,56 @@
+{extends file="layout.tpl"}
+
+{block name="content"}
+
+    {if isset($error)}
+        <div class="alert alert-danger text-center" role="alert">
+            {$error}
+        </div>
+    {/if}
+
+    <h2 class="text-center mb-4">Create a New Character</h2>
+
+    <form action="index.php?page=saveCharacter" method="POST" class="mx-auto" style="max-width: 600px;">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" name="name" id="name" class="form-control" placeholder="Enter character name" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="role" class="form-label">Role</label>
+            <select name="role" id="role" class="form-select" required>
+                <option value="" selected disabled>-- Choose a role --</option>
+                <option value="Warrior">Warrior</option>
+                <option value="Mage">Mage</option>
+                <option value="Archer">Archer</option>
+                <option value="Healer">Healer</option>
+                <option value="Tank">Tank</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="health" class="form-label">Health</label>
+            <input type="number" name="health" id="health" class="form-control" placeholder="Enter health points">
+        </div>
+
+        <div class="mb-3">
+            <label for="attack" class="form-label">Attack</label>
+            <input type="number" name="attack" id="attack" class="form-control" placeholder="Enter attack power">
+        </div>
+
+        <div class="mb-3">
+            <label for="defense" class="form-label">Defense</label>
+            <input type="number" name="defense" id="defense" class="form-control" placeholder="Enter defense points">
+        </div>
+
+        <div class="mb-3">
+            <label for="maxSlots" class="form-label">Max Slots</label>
+            <input type="number" name="maxSlots" id="maxSlots" class="form-control" placeholder="Enter maximum slots">
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-success">Create Character</button>
+        </div>
+    </form>
+
+{/block}
